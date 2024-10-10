@@ -1,11 +1,17 @@
-Este port scanning funciona do seguinte modo, voce deve ir na pasta onde instalou o arquivo ponto py, por exemplo:
+Este port scanner funciona do seguinte modo, você deve ir na pasta onde instalou o arquivo ponto py, por exemplo:
 
 $cd Downloads
 
 dentro da pasta voce roda o programa da seguinte maneira:
 
-$python3 escanearPortas.py [ip do alvo] [porta de inicio] [porta do final]
+$python3 escanearPortas.py [ip do alvo] [porta inicial] [porta final]
 
-A porta de inicio e porta de final servem como um filtro, existem 65535 portas na pilha TCP/IP, assim voce pode escolher por qual porta o programa inicia a varredura e ate onde ela vai
+porta inicial é a porta por onde você irá começar a varredura
+porta final é a porta onde irá acabar a varredura
 
-a resposta pode ser duas, ou a porta esta aberta ou esta fechada, alem de motsrar o servico que etsa rodando em cada uma, caso o programa nao saiba o servico ele sera colocado como desconhecido
+O programa pode retornar:
+
+[+]Aberta - para portas que estão abertas
+[-]Fechada - para portas que estão fechadas
+
+O programa fala os serviços que estão rodando naquela porta, esta função é feita pela biblioteca, os serviços que ela não identifica é colocado como Desconhecido, porém basta pesquisar no google o número da porta para saber o possível serviço rodando na mesma
